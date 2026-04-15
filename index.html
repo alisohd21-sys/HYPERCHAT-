@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HyperChat Pro | تطبيق رسمي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-box">
+            <h2><i class="fa-brands fa-rocketchat"></i> HyperChat</h2>
+            <p>سجل دخولك للتواصل مع العالم</p>
+            
+            <form id="email-auth-form">
+                <input type="email" id="email-input" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="password-input" placeholder="كلمة المرور" required>
+                <div class="auth-buttons">
+                    <button type="button" id="btn-login" class="btn primary">تسجيل الدخول</button>
+                    <button type="button" id="btn-register" class="btn secondary">إنشاء حساب</button>
+                </div>
+            </form>
+
+            <div class="divider"><span>أو</span></div>
+            <button id="btn-google" class="btn google"><i class="fa-brands fa-google"></i> الدخول عبر جوجل</button>
+        </div>
+    </div>
+
+    <div id="main-app" class="app-container hidden">
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                    <span id="current-user-name">تحميل...</span>
+                </div>
+                <button id="btn-logout" title="تسجيل الخروج"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="groups">الكروبات</div>
+                <div class="tab" data-tab="private">الرسائل الخاصة</div>
+            </div>
+
+            <div id="list-container" class="list-container">
+                </div>
+        </div>
+
+        <div id="chat-area" class="chat-area hidden-mobile">
+            <div class="chat-header">
+                <button id="btn-back" class="mobile-only"><i class="fa-solid fa-arrow-right"></i></button>
+                <div class="chat-title" id="chat-title">اختر محادثة للبدء</div>
+            </div>
+            
+            <div id="messages-container" class="messages-container">
+                <div class="empty-state">مرحباً بك في HyperChat <br> اختر محادثة من القائمة الجانبية</div>
+            </div>
+
+            <form id="chat-form" class="input-area hidden">
+                <input type="text" id="msg-input" placeholder="اكتب رسالة..." autocomplete="off">
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
